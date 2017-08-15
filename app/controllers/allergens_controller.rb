@@ -1,4 +1,14 @@
 class AllergensController < ApplicationController
+  before_action :current_user_must_be_allergen_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_allergen_user
+    allergen = Allergen.find(params[:id])
+
+    unless current_user == allergen.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @allergens = Allergen.all
 
