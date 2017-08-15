@@ -33,7 +33,7 @@
           Allergens
         </label>
 
-        <input type="text" id="allergens_id" name="allergens_id" placeholder="Allergens" class="form-control" value="<%= @entree.allergens_id %>">
+        <%= select_tag(:allergens_id, options_from_collection_for_select(Allergen.all, :id, :name, @entree.allergens_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for restaurants_id -->
