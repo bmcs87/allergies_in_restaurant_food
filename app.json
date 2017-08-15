@@ -1,0 +1,1 @@
+{"name":"Allergies in restaurant food","repository":"https://github.com/bmcs87/allergies_in_restaurant_food","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
