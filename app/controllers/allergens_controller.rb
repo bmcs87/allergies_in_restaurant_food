@@ -16,6 +16,7 @@ class AllergensController < ApplicationController
   end
 
   def show
+    @entree = Entree.new
     @allergen = Allergen.find(params[:id])
 
     render("allergens/show.html.erb")

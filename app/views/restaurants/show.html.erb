@@ -57,6 +57,44 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_entree" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for allergens_id -->
+      <div class="form-group">
+        <label for="allergens_id" class="control-label">
+          Allergens
+        </label>
+
+        <%= select_tag(:allergens_id, options_from_collection_for_select(Allergen.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for restaurants_id -->
+      <div class="form-group">
+        <label for="restaurants_id" class="control-label">
+          Restaurants
+        </label>
+
+        <%= select_tag(:restaurants_id, options_from_collection_for_select(Restaurant.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Entree
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
