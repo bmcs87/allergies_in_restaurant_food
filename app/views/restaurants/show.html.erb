@@ -29,3 +29,96 @@
     </div>
   </div>
 </div>
+
+<!-- A Restaurant has many cuisines -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cuisines
+      </li>
+
+      <% @restaurant.cuisines.each do |entree| %>
+        <li class="list-group-item">
+          <a href="/entrees/<%= entree.id %>">
+            <%= entree.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/entrees/<%= entree.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/entrees/<%= entree.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_entree/<%= entree.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many allergens -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Allergens
+      </li>
+
+      <% @restaurant.allergens.each do |allergen| %>
+        <li class="list-group-item">
+          <a href="/allergens/<%= allergen.id %>">
+            <%= allergen.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/allergens/<%= allergen.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/allergens/<%= allergen.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_allergen/<%= allergen.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many dishes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Dishes
+      </li>
+
+      <% @restaurant.dishes.each do |entree| %>
+        <li class="list-group-item">
+          <a href="/entrees/<%= entree.id %>">
+            <%= entree.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/entrees/<%= entree.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/entrees/<%= entree.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_entree/<%= entree.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
