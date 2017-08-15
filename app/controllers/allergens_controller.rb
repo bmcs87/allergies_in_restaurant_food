@@ -10,7 +10,7 @@ class AllergensController < ApplicationController
   end
 
   def index
-    @allergens = Allergen.all
+    @allergens = Allergen.page(params[:page]).per(10)
 
     render("allergens/index.html.erb")
   end

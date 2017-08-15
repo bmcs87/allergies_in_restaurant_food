@@ -1,6 +1,6 @@
 class EntreesController < ApplicationController
   def index
-    @entrees = Entree.all
+    @entrees = Entree.page(params[:page]).per(10)
 
     render("entrees/index.html.erb")
   end
