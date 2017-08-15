@@ -10,7 +10,8 @@ class AllergensController < ApplicationController
   end
 
   def index
-    @allergens = Allergen.page(params[:page]).per(10)
+    @q = Allergen.ransack(params[:q])
+    @allergens = @q.result(:distinct => true).includes(:cuisines, :user, :restaurants).page(params[:page]).per(10)
 
     render("allergens/index.html.erb")
   end

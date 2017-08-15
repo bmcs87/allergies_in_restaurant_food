@@ -1,6 +1,7 @@
 class EntreesController < ApplicationController
   def index
-    @entrees = Entree.page(params[:page]).per(10)
+    @q = Entree.ransack(params[:q])
+    @entrees = @q.result(:distinct => true).includes(:allergens, :restaurants, :restaurant).page(params[:page]).per(10)
 
     render("entrees/index.html.erb")
   end
