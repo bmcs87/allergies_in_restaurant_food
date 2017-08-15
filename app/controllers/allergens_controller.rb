@@ -1,5 +1,5 @@
 class AllergensController < ApplicationController
-  before_action :current_user_must_be_allergen_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_allergen_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_allergen_user
     allergen = Allergen.find(params[:id])
