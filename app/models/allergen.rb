@@ -11,6 +11,10 @@ class Allergen < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :restaurants,
+             :through => :cuisines,
+             :source => :restaurants
+
   # Validations
 
 end
