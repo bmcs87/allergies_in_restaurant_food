@@ -9,6 +9,10 @@ class Entree < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :restaurant,
+             :through => :allergens,
+             :source => :restaurants
+
   # Validations
 
 end

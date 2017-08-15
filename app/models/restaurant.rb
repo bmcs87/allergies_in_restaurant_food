@@ -8,6 +8,10 @@ class Restaurant < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :dishes,
+             :through => :cuisines,
+             :source => :cuisines
+
   has_many   :allergens,
              :through => :cuisines,
              :source => :allergens
