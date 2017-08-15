@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @entree.errors.any? %>
+  <% @entree.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Entree</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_entree" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @entree.name %>">
+      </div>
+
+      <!-- Label and input for allergens_id -->
+      <div class="form-group">
+        <label for="allergens_id" class="control-label">
+          Allergens
+        </label>
+
+        <input type="text" id="allergens_id" name="allergens_id" placeholder="Allergens" class="form-control" value="<%= @entree.allergens_id %>">
+      </div>
+
+      <!-- Label and input for restaurants_id -->
+      <div class="form-group">
+        <label for="restaurants_id" class="control-label">
+          Restaurants
+        </label>
+
+        <input type="text" id="restaurants_id" name="restaurants_id" placeholder="Restaurants" class="form-control" value="<%= @entree.restaurants_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Entree
+      </button>
+      or
+      <a href="/entrees">Cancel</a>
+    </form>
+  </div>
+</div>
