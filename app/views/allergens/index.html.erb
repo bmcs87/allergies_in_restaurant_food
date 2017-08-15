@@ -21,7 +21,13 @@
         <td><%= allergen.name %></td>
         <td><%= allergen.reaction %></td>
         <td><%= allergen.restaurants_id %></td>
-        <td><%= allergen.user.email %></td>
+        <td>
+          <% if allergen.user.present? %>
+            <a href="/users/<%= allergen.user.id %>">
+              <%= allergen.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/allergens/<%= allergen.id %>" class="btn btn-primary">Show</a>
           

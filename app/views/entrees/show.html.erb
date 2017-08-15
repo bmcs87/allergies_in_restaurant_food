@@ -9,10 +9,22 @@
       <dd><%= @entree.name %></dd>
 
       <dt>Allergens</dt>
-      <dd><%= @entree.allergens_id %></dd>
+      <dd>
+        <% if @entree.allergens.present? %>
+          <a href="/allergens/<%= @entree.allergens_id %>">
+            <%= @entree.allergens.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Restaurants</dt>
-      <dd><%= @entree.restaurants_id %></dd>
+      <dd>
+        <% if @entree.restaurants.present? %>
+          <a href="/restaurants/<%= @entree.restaurants_id %>">
+            <%= @entree.restaurants.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

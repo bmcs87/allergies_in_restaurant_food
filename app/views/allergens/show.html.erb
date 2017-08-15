@@ -15,7 +15,13 @@
       <dd><%= @allergen.restaurants_id %></dd>
 
       <dt>User</dt>
-      <dd><%= @allergen.user_id %></dd>
+      <dd>
+        <% if @allergen.user.present? %>
+          <a href="/users/<%= @allergen.user_id %>">
+            <%= @allergen.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
