@@ -21,7 +21,7 @@
         <td><%= allergen.name %></td>
         <td><%= allergen.reaction %></td>
         <td><%= allergen.restaurants_id %></td>
-        <td><%= allergen.user_id %></td>
+        <td><%= allergen.user.email %></td>
         <td>
           <a href="/allergens/<%= allergen.id %>" class="btn btn-primary">Show</a>
           <a href="/allergens/<%= allergen.id %>/edit" class="btn btn-warning">Edit</a>
