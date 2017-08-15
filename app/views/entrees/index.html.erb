@@ -18,7 +18,7 @@
       <% @entrees.each do |entree| %>
       <tr>
         <td><%= entree.name %></td>
-        <td><%= entree.allergens_id %></td>
+        <td><%= entree.allergens.name %></td>
         <td><%= entree.restaurants_id %></td>
         <td>
           <a href="/entrees/<%= entree.id %>" class="btn btn-primary">Show</a>
